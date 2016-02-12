@@ -19,10 +19,12 @@ EVENT_WIP = "inprogress"
 
 def getStrategy(main_loop):
     class DefiStrategy(Strategy):
-            def __init__(self, field, referee, team, opponent_team, is_team_yellow=False):
+            def __init__(self, field, referee, team, opponent_team, drawHandler, is_team_yellow=False):
                 Strategy.__init__(self, field, referee, team, opponent_team)
 
                 self.team.is_team_yellow = is_team_yellow
+                
+                self.drawHandler = drawHandler
 
                 self.robot_states = [self._idle for robot in team.players]
                 self.robot_events = [EVENT_SUCCEED for robot in team.players]
@@ -36,7 +38,7 @@ def getStrategy(main_loop):
                 self.collider = Collision(team.players + opponent_team.players)
 
             def on_start(self):
-                main_loop(self, self.field, self.robot_events, self.team, self.opponent_team)
+                main_loop(self, self.field, self.robot_events, self.team, self.opponent_team, self.drawHandler)
                 self.execute()
 
             def execute(self):
