@@ -12,6 +12,7 @@ class Defi1(object):
             self.a = 1
             
             drawHandler.addPoint(1000, 1000)
+            drawHandler.addCircle(2000, 1000, 200)
             
             #coach.bouger(0, terrain.ball)  #bouger vers la balle en conservant l'orientation de depart
             #coach.bouger(0, terrain.ball, cible=terrain.ball)  #bouger vers la balle en visant la balle
