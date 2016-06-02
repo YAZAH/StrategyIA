@@ -1,7 +1,7 @@
 # Under MIT License, see LICENSE.txt
 """ Executor qui se charge de mettre en place les Tactic d'un Play.
 """
-from StrategyIA.UltimateStrat.Executor.Executor import Executor
+from UltimateStrat.Executor.Executor import Executor
 
 __author__ = 'RoboCupULaval'
 

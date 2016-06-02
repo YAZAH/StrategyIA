@@ -62,7 +62,7 @@ class tPathfinder(TacticBase):
             print("Vecteur final du robot à suivre: " + str(relative_vector) + "\n")
             return {'skill': 'sFollowTarget', 'target': relative_vector, 'goal': target}
         else:
-            return {'skill': 'sKickLow', 'target': player, 'goal': player}
+            return {'skill': 'sStop', 'target': player, 'goal': player}
 
 
 def projection_calculation(obstacle, obstacle_velocity, projected_obstacle_list=None, delta_t=1, acceleration=1500):
