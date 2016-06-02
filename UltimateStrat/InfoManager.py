@@ -5,7 +5,7 @@
 """
 from UltimateStrat.Data.BlackBoard import BlackBoard
 from RULEngine.Util.geometry import * # TODO: remove wildcard
-#from Util.geometry import *
+from Util.geometry import *
 
 __author__ = 'RoboCupULaval'
 
@@ -107,8 +107,9 @@ class InfoManager:
 
     # TODO implement getNextPlay
     def get_next_play(self, state):
+        return 'pPathfinder'
         #  return 'pQueueLeuLeu'
-        return 'pTestBench'
+        #  return 'pTestBench'
 
     def get_speed(self, i):
         list_pose = self.black_board['friend'][str(i)]['retro_pose']
@@ -127,7 +128,7 @@ class InfoManager:
 
             # Final calculations
             speed = dst_tot / time_tot
-            normal = (m.cos(m.radians(angle)), m.sin(m.radians(angle)))
+            normal = (m.cos(angle), m.sin(angle))
             vector = (normal[0] * speed, normal[1] * speed)
 
             # print('SPEED:{0:.4f} | NORMAL:{1} | VECTOR:{2}'.format(speed, normal, vector))
@@ -151,7 +152,7 @@ class InfoManager:
 
             # Final calculations
             speed = dst_tot / time_tot
-            normal = (m.cos(m.radians(angle)), m.sin(m.radians(angle)))
+            normal = (m.cos(angle), m.sin(angle))
             vector = (normal[0] * speed, normal[1] * speed)
 
             # print('SPEED:{0:.4f} | NORMAL:{1} | VECTOR:{2}'.format(speed, normal, vector))
